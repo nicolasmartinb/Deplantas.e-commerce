@@ -5,20 +5,20 @@ botonComprar.addEventListener ("click", comprarCarrito);
 const clickButton= document.querySelector(".ClickButton")
 
 let carrito = [];
-// Cargar productos al inicio
+
 window.onload = function () {
   cargarProductos();
 };
 
 function cargarProductos() {
-  // Utiliza fetch para obtener los productos desde el archivo JSON
+  
   fetch('productos.json')
     .then(response => response.json())
     .then(productos => {
-      // Limpiar el contenido existente del contenedor
+      
       productosContainer.innerHTML = '';
 
-      // Genera las tarjetas dinámicamente
+      
       productos.forEach(producto => {
         const card = `
           <div class="col d-flex justify-content-center mb-4">
@@ -35,7 +35,7 @@ function cargarProductos() {
           </div>
         `;
 
-        // Agrega la tarjeta al contenedor de productos
+       
         productosContainer.innerHTML += card;
       });
     })
