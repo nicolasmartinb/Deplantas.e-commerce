@@ -1,11 +1,51 @@
-const Clickbutton = document.querySelectorAll('.button');
 const tbody = document.querySelector('.tbody');
-const botonComprar = document.querySelector("#btn-success");
+const productosContainer = document.getElementById('productos-container');
+const botonComprar = document.getElementById("btn-success");
+botonComprar.addEventListener ("click", comprarCarrito);
+const clickButton= document.querySelector(".ClickButton")
 
 let carrito = [];
+// Cargar productos al inicio
+window.onload = function () {
+  cargarProductos();
+};
 
-Clickbutton.forEach(btn => {
-  btn.addEventListener('click', addToCarritoItem);
+function cargarProductos() {
+  // Utiliza fetch para obtener los productos desde el archivo JSON
+  fetch('productos.json')
+    .then(response => response.json())
+    .then(productos => {
+      // Limpiar el contenido existente del contenedor
+      productosContainer.innerHTML = '';
+
+      // Genera las tarjetas dinámicamente
+      productos.forEach(producto => {
+        const card = `
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 mi-bg rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center txt-cards">${producto.nombre}</h5>
+              <img src="${producto.img}" class="card-img-top imagenes" alt="...">
+              <div class="card-body">
+                <h5 class="text-price">Precio: <span class="precio">${producto.precio}</span></h5>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary button ClickButton" onclick="addToCarritoItem(event)">Añadir a Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Agrega la tarjeta al contenedor de productos
+        productosContainer.innerHTML += card;
+      });
+    })
+    .catch(error => console.error('Error al cargar los productos:', error));
+}
+
+
+
+clickButton.forEach(botonComprar => {
+botonComprar.addEventListener('click', addToCarritoItem);
 });
 
 function addToCarritoItem(e) {

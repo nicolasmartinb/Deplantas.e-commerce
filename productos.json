@@ -1,0 +1,72 @@
+[
+    
+    {
+        "Id": "Interior1",
+        "nombre" : "planta 1",
+        "precio": 10,
+        "img": "/img/cinta.jpg"
+
+    },
+    {
+        "Id": "Interior2",
+        "nombre" : "planta 2",
+        "precio": 20,
+        "img": "/img/crisantemo.jpg"
+        
+    },
+    {
+        "Id": "Interior3",
+        "nombre" : "planta 3",
+        "precio": 30,
+        "img":"/img/lirios.jpg" 
+        
+    },
+    {
+        "Id": "Interior4",
+        "nombre" : "planta 4",
+        "precio": 40,
+        "img": "/img/palmera-exterior.jpg"
+        
+    },
+    {
+        "Id": "Interior5",
+        "nombre" : "planta 5",
+        "precio": 50,
+        "img": "/img/potos.png"
+        
+    },
+    {
+        "Id": "Exterior1",
+        "nombre" : "planta 1",
+        "precio": 10,
+        "img": "/img/yuca.jpg"
+        
+    },
+    {
+        "Id": "Exterior2",
+        "nombre" :"planta 2" ,
+        "precio": 20,
+        "img": "/img/helecho.jpg"
+        
+    },
+    {
+        "Id": "Exterior3",
+        "nombre" :"planta 3" ,
+        "precio": 30,
+        "img": "/img/kentia.jpg"
+        
+    },
+    {
+        "Id": "Exterior4",
+        "nombre" : "planta 4",
+        "precio": 40,
+        "img": "/img/hibisco.jpg"
+        
+    },
+    {
+        "Id": "Exterior5",
+        "nombre" : "planta 5",
+        "precio": 50,
+        "img": "/img/jazmin.jpg"
+    }
+]
